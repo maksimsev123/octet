@@ -1,5 +1,5 @@
 mod text_stats;
-use text_stats::text_stats::count_chars;
+use text_stats::text_stats::*;
 
 fn main() {
     // Упражнение 1
@@ -19,4 +19,18 @@ fn main() {
     println!("Rust❤️2025: {} слов", "Rust❤️2025".split(' ').count());
     println!("Привет,   мир!   😀🌍: {} слов", "Привет,   мир!   😀🌍".split(' ').filter(|s| !s.is_empty()).count());
     println!("a\\t\\t\\tb\\n\\n\\nc🚀🚀🚀: {} слов", "a\t\t\tb\n\n\nc🚀🚀🚀".split_ascii_whitespace().count());
+    
+    let test_text = "Hello world hello Rust world";
+    
+    // Zadacha 1: частотный словарь
+    println!("\nЧастотный словарь: {:?}", word_frequency(test_text));
+    
+    // Zadacha 2: уникальные слова
+    println!("Уникальные слова: {:?}", unique_words(test_text));
+    
+    // Zadacha 3: самое длинное слово
+    println!("Самое длинное слово: {:?}", longest_word(test_text));
+    
+    // Zadacha 4: топ 3 слова
+    println!("Топ 3 слова: {:?}", top_n_words(test_text, 3));
 }
